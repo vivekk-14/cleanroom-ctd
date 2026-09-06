@@ -1,0 +1,66 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# --- Datasets (large; do not commit) -------------------------------
+# CIC-IDS2017 CSVs are ~260 MB for the 3-file subset. Each team member
+# downloads them separately and places them in data/raw/.
+data/raw/*.csv
+data/processed/*.csv
+
+# Cleaning provenance is regenerated alongside the CSV it describes. Committing
+# it without the data would leave a fresh clone holding a manifest for a file
+# that does not exist.
+data/processed/*.meta.json
+
+# Keep the folders themselves so the tree survives a fresh clone.
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# --- Model artefacts ------------------------------------------------
+# Regenerate with:  python -m model.train --compare
+#
+# Artefacts live under model/profiles/<slug>/, one directory per feature
+# profile. The patterns are recursive (**) because `model/*.pkl` does NOT match
+# `model/profiles/bidirectional/model.pkl` -- an earlier version of this file
+# used the flat form and would have committed ~2.5 MB of binaries plus a stale
+# model that a fresh clone might use instead of retraining.
+model/**/*.pkl
+model/**/*.json
+
+# --- Test fixtures MUST be committed --------------------------------
+# tests/fixtures/ood_synthetic_attacks.csv is a deliberately
+# out-of-distribution artefact that the OOD tests depend on. It is small
+# (1.6 KB) and must survive a clone, so it is force-included ahead of any
+# broader CSV rule.
+!tests/fixtures/
+!tests/fixtures/*.csv
+
+# --- Runtime output -------------------------------------------------
+# Alert stream written by streaming/replay.py, read by dashboard/app.py.
+runtime/*.jsonl
+runtime/*.json
+!runtime/.gitkeep
+
+# --- Evaluation output ----------------------------------------------
+reports/
+
+# --- OS / editor ----------------------------------------------------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+*.swp
+
+# --- Trained profiles required by model.predict ---
+!model/profiles/
+!model/profiles/bidirectional/
+!model/profiles/bidirectional/*.pkl
+!model/profiles/bidirectional/*.json
+!model/profiles/strict_unidirectional/
+!model/profiles/strict_unidirectional/*.pkl
+!model/profiles/strict_unidirectional/*.json

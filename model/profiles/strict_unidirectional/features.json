@@ -1,0 +1,37 @@
+{
+  "profile": "STRICT_UNIDIRECTIONAL",
+  "feature_count": 18,
+  "features": [
+    "Flow Duration",
+    "Total Fwd Packets",
+    "Total Length of Fwd Packets",
+    "Fwd Packet Length Max",
+    "Fwd Packet Length Min",
+    "Fwd Packet Length Mean",
+    "Fwd Packet Length Std",
+    "Fwd Packets/s",
+    "Fwd IAT Mean",
+    "Fwd IAT Std",
+    "Fwd IAT Max",
+    "Fwd IAT Min",
+    "Fwd Header Length",
+    "Fwd PSH Flags",
+    "act_data_pkt_fwd",
+    "min_seg_size_forward",
+    "Init_Win_bytes_forward",
+    "Destination Port"
+  ],
+  "classes": [
+    "BENIGN",
+    "Botnet",
+    "DDoS",
+    "PortScan"
+  ],
+  "target_column": "threat_class",
+  "requires_scaling": false,
+  "trained_at": "2026-09-05T23:04:50+00:00",
+  "model_file": "model.pkl",
+  "label_encoder_file": "label_encoder.pkl",
+  "ood_reference_file": "ood_reference.json",
+  "notes": "Feature order in 'features' is the exact column order the model was fitted on. predict_threat() must build its input vector in this order, and validate_features() enforces it. No scaler is required: random forests split on per-feature thresholds and are invariant to monotonic rescaling. This contract applies ONLY to this profile: a record satisfying a different profile's contract cannot be scored by this model."
+}

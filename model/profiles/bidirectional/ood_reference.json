@@ -1,0 +1,105 @@
+{
+  "features": [
+    "Flow Duration",
+    "Total Fwd Packets",
+    "Total Backward Packets",
+    "Total Length of Fwd Packets",
+    "Total Length of Bwd Packets",
+    "Flow Bytes/s",
+    "Flow Packets/s",
+    "Fwd Packet Length Mean",
+    "Bwd Packet Length Mean",
+    "Flow IAT Mean",
+    "Flow IAT Std",
+    "SYN Flag Count",
+    "ACK Flag Count",
+    "Destination Port"
+  ],
+  "quantile": 0.001,
+  "n_training_rows": 113960,
+  "bounds": {
+    "Flow Duration": {
+      "lower": 1.0,
+      "upper": 119328515.47199999,
+      "median": 35807.0
+    },
+    "Total Fwd Packets": {
+      "lower": 1.0,
+      "upper": 155.04099999999744,
+      "median": 2.0
+    },
+    "Total Backward Packets": {
+      "lower": 0.0,
+      "upper": 214.0,
+      "median": 1.0
+    },
+    "Total Length of Fwd Packets": {
+      "lower": 0.0,
+      "upper": 19898.229999999923,
+      "median": 26.0
+    },
+    "Total Length of Bwd Packets": {
+      "lower": 0.0,
+      "upper": 320891.48399999866,
+      "median": 6.0
+    },
+    "Flow Bytes/s": {
+      "lower": 0.0,
+      "upper": 70000000.0,
+      "median": 22565.96097
+    },
+    "Flow Packets/s": {
+      "lower": 0.039249722557,
+      "upper": 2000000.0,
+      "median": 127.6242741
+    },
+    "Fwd Packet Length Mean": {
+      "lower": 0.0,
+      "upper": 2322.6,
+      "median": 6.0
+    },
+    "Bwd Packet Length Mean": {
+      "lower": 0.0,
+      "upper": 2901.75,
+      "median": 6.0
+    },
+    "Flow IAT Mean": {
+      "lower": 1.0,
+      "upper": 34212299.99999923,
+      "median": 10148.0
+    },
+    "Flow IAT Std": {
+      "lower": 0.0,
+      "upper": 54300000.0,
+      "median": 6455.3256505
+    },
+    "SYN Flag Count": {
+      "lower": 0.0,
+      "upper": 1.0,
+      "median": 0.0
+    },
+    "ACK Flag Count": {
+      "lower": 0.0,
+      "upper": 1.0,
+      "median": 0.0
+    },
+    "Destination Port": {
+      "lower": 4.0,
+      "upper": 65127.081999999995,
+      "median": 80.0
+    }
+  },
+  "min_violations_for_ood": 2,
+  "notes": [
+    "Bounds are per-feature quantiles of the TRAINING split only. Using all rows would leak held-out data into the reference.",
+    "A value outside its bound means the trees are extrapolating on that feature: every threshold they learned lies on one side of it."
+  ],
+  "novelty": {
+    "fitted_on": "benign training rows only",
+    "n_rows": 37500,
+    "contamination": 0.01,
+    "threshold": -0.6343318437958029,
+    "benign_score_median": -0.3599688134793691,
+    "benign_score_p1": -0.6343318437958029
+  }
+}

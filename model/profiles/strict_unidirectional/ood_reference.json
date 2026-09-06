@@ -1,0 +1,129 @@
+{
+  "features": [
+    "Flow Duration",
+    "Total Fwd Packets",
+    "Total Length of Fwd Packets",
+    "Fwd Packet Length Max",
+    "Fwd Packet Length Min",
+    "Fwd Packet Length Mean",
+    "Fwd Packet Length Std",
+    "Fwd Packets/s",
+    "Fwd IAT Mean",
+    "Fwd IAT Std",
+    "Fwd IAT Max",
+    "Fwd IAT Min",
+    "Fwd Header Length",
+    "Fwd PSH Flags",
+    "act_data_pkt_fwd",
+    "min_seg_size_forward",
+    "Init_Win_bytes_forward",
+    "Destination Port"
+  ],
+  "quantile": 0.001,
+  "n_training_rows": 113960,
+  "bounds": {
+    "Flow Duration": {
+      "lower": 1.0,
+      "upper": 119328515.47199999,
+      "median": 35807.0
+    },
+    "Total Fwd Packets": {
+      "lower": 1.0,
+      "upper": 155.04099999999744,
+      "median": 2.0
+    },
+    "Total Length of Fwd Packets": {
+      "lower": 0.0,
+      "upper": 19898.229999999923,
+      "median": 26.0
+    },
+    "Fwd Packet Length Max": {
+      "lower": 0.0,
+      "upper": 11595.0,
+      "median": 6.0
+    },
+    "Fwd Packet Length Min": {
+      "lower": 0.0,
+      "upper": 1375.0,
+      "median": 0.0
+    },
+    "Fwd Packet Length Mean": {
+      "lower": 0.0,
+      "upper": 2322.6,
+      "median": 6.0
+    },
+    "Fwd Packet Length Std": {
+      "lower": 0.0,
+      "upper": 5183.42983,
+      "median": 0.0
+    },
+    "Fwd Packets/s": {
+      "lower": 0.020722733842,
+      "upper": 2000000.0,
+      "median": 63.77957778
+    },
+    "Fwd IAT Mean": {
+      "lower": 0.0,
+      "upper": 94000000.0,
+      "median": 23.0
+    },
+    "Fwd IAT Std": {
+      "lower": 0.0,
+      "upper": 44804099.99999975,
+      "median": 0.0
+    },
+    "Fwd IAT Max": {
+      "lower": 0.0,
+      "upper": 103040999.99999744,
+      "median": 35.5
+    },
+    "Fwd IAT Min": {
+      "lower": 0.0,
+      "upper": 94000000.0,
+      "median": 1.0
+    },
+    "Fwd Header Length": {
+      "lower": 20.0,
+      "upper": 3592.1639999999898,
+      "median": 64.0
+    },
+    "Fwd PSH Flags": {
+      "lower": 0.0,
+      "upper": 1.0,
+      "median": 0.0
+    },
+    "act_data_pkt_fwd": {
+      "lower": 0.0,
+      "upper": 106.04099999999744,
+      "median": 1.0
+    },
+    "min_seg_size_forward": {
+      "lower": 20.0,
+      "upper": 40.0,
+      "median": 20.0
+    },
+    "Init_Win_bytes_forward": {
+      "lower": -1.0,
+      "upper": 65535.0,
+      "median": 1024.0
+    },
+    "Destination Port": {
+      "lower": 4.0,
+      "upper": 65127.081999999995,
+      "median": 80.0
+    }
+  },
+  "min_violations_for_ood": 2,
+  "notes": [
+    "Bounds are per-feature quantiles of the TRAINING split only. Using all rows would leak held-out data into the reference.",
+    "A value outside its bound means the trees are extrapolating on that feature: every threshold they learned lies on one side of it."
+  ],
+  "novelty": {
+    "fitted_on": "benign training rows only",
+    "n_rows": 37500,
+    "contamination": 0.01,
+    "threshold": -0.6431446974247901,
+    "benign_score_median": -0.3517148966800771,
+    "benign_score_p1": -0.6431446974247901
+  }
+}

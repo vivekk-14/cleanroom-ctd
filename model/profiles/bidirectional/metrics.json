@@ -1,0 +1,126 @@
+{
+  "profile": "BIDIRECTIONAL",
+  "trained_at": "2026-09-05T23:04:45+00:00",
+  "accuracy": 0.9962092294732409,
+  "balanced_accuracy": 0.9813328952772074,
+  "precision_macro": 0.9547721254749684,
+  "recall_macro": 0.9813328952772074,
+  "f1_macro": 0.9671665124811966,
+  "precision_weighted": 0.9965117632268351,
+  "recall_weighted": 0.9962092294732409,
+  "f1_weighted": 0.9963132288430209,
+  "per_class": {
+    "BENIGN": {
+      "precision": 0.9966237942122187,
+      "recall": 0.99184,
+      "f1": 0.9942261427425821,
+      "support": 12500
+    },
+    "Botnet": {
+      "precision": 0.8227848101265823,
+      "recall": 0.9342915811088296,
+      "f1": 0.875,
+      "support": 487
+    },
+    "DDoS": {
+      "precision": 0.9997599039615847,
+      "recall": 0.99936,
+      "f1": 0.9995599119823965,
+      "support": 12500
+    },
+    "PortScan": {
+      "precision": 0.9999199935994879,
+      "recall": 0.99984,
+      "f1": 0.999879995199808,
+      "support": 12500
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "BENIGN",
+      "Botnet",
+      "DDoS",
+      "PortScan"
+    ],
+    "rows_are_true_columns_are_predicted": true,
+    "matrix": [
+      [
+        12398,
+        98,
+        3,
+        1
+      ],
+      [
+        32,
+        455,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        12492,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        12498
+      ]
+    ]
+  },
+  "classification_report": "              precision    recall  f1-score   support\n\n      BENIGN     0.9966    0.9918    0.9942     12500\n      Botnet     0.8228    0.9343    0.8750       487\n        DDoS     0.9998    0.9994    0.9996     12500\n    PortScan     0.9999    0.9998    0.9999     12500\n\n    accuracy                         0.9962     37987\n   macro avg     0.9548    0.9813    0.9672     37987\nweighted avg     0.9965    0.9962    0.9963     37987\n",
+  "feature_importance": {
+    "Destination Port": 0.18169708013698613,
+    "Fwd Packet Length Mean": 0.12500063116097632,
+    "Total Length of Fwd Packets": 0.12077449389356436,
+    "Total Length of Bwd Packets": 0.09518425148995442,
+    "Flow Duration": 0.08694292104687819,
+    "Bwd Packet Length Mean": 0.07165157235790262,
+    "Total Fwd Packets": 0.06483497978398424,
+    "ACK Flag Count": 0.06181231341447709,
+    "Total Backward Packets": 0.0568456305280471,
+    "Flow Bytes/s": 0.03833782777773768,
+    "Flow Packets/s": 0.0373257341645103,
+    "Flow IAT Std": 0.03373701472948142,
+    "Flow IAT Mean": 0.02481511498358224,
+    "SYN Flag Count": 0.0010404345319179656
+  },
+  "dataset": {
+    "processed_file": "flows_clean.csv",
+    "total_rows": 151947,
+    "train_rows": 113960,
+    "test_rows": 37987,
+    "class_counts": {
+      "PortScan": 50000,
+      "DDoS": 50000,
+      "BENIGN": 50000,
+      "Botnet": 1947
+    }
+  },
+  "hyperparameters": {
+    "n_estimators": 60,
+    "max_depth": 20,
+    "min_samples_leaf": 1,
+    "class_weight": "balanced_subsample",
+    "test_size": 0.25,
+    "stratify": true,
+    "random_state": 42
+  },
+  "timing": {
+    "fit_seconds": 2.44,
+    "test_set_predict_seconds": 0.128,
+    "test_set_rows": 37987,
+    "single_flow_predict_ms": 2.53,
+    "single_flow_probe_count": 200,
+    "throughput_flows_per_second": 394.7
+  },
+  "environment": {
+    "python": "3.14.2",
+    "scikit_learn": "1.8.0",
+    "pandas": "3.0.0",
+    "numpy": "2.4.1",
+    "platform": "Windows-11-10.0.26200-SP0"
+  }
+}

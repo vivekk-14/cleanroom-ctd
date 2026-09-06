@@ -1,0 +1,28 @@
+# AI-Based Detection of Cyber Threats in Unidirectional IP Traffic
+# Pinned so both team members get an identical environment.
+#
+# Install:
+#   python -m venv .venv
+#   .venv\Scripts\activate          (Windows)
+#   source .venv/bin/activate       (Linux/macOS)
+#   pip install -r requirements.txt
+
+# --- Student A: data + ML ---
+pandas==3.0.0
+numpy==2.4.1
+scikit-learn==1.8.0
+joblib==1.5.3
+
+# --- Student B: streaming + dashboard ---
+streamlit==1.63.0
+plotly==7.0.0
+
+# --- Model evaluation plots (optional, used by evaluate.py --plot) ---
+matplotlib==3.11.0
+
+# --- Tests ---
+pytest==9.1.1
+
+# NOTE: scapy is intentionally NOT required.
+# This prototype reads flow records from CSV only. It never opens a socket
+# and never captures live packets. See detection/passive_guard.py.
